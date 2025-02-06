@@ -23,7 +23,7 @@ export default function App() {
     < >
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-screen bg-gray-800 text-white w-[75%] sm:w-[60%] md:w-[20%] z-30 transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-100 md:translate-x-0'
+        className={`fixed top-0 left-0 h-screen bg-gray-800 text-white w-[75%] sm:w-[60%] md:w-[20%] z-30 transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
           }`}>
         <button
           className="absolute top-4 right-4 text-white text-2xl md:hidden"
