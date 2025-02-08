@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaGithub,FaUserGraduate, FaLaptopCode, FaGlobe  } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaGithub,FaUserGraduate,  FaGlobe  } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";

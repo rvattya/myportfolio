@@ -1,5 +1,9 @@
-import React from 'react'
-import Carousel from "better-react-carousel";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 const Projects = () => {
   const projects = [
@@ -18,7 +22,6 @@ const Projects = () => {
       description: "Boosted website traffic and engagement through strategic SEO and social media campaigns.",
       image: "https://searchengineland.com/wp-content/seloads/2014/08/seo-idea-lightbulbs-ss-1920.jpg"
     },
-
     {
       title: "Packer Mover Website",
       description: "Designed a feature-rich website for easy booking and customer inquiries.",
@@ -34,7 +37,6 @@ const Projects = () => {
       description: "Created an interactive website with engaging UI for better parent-teacher communication.",
       image: "https://vattyastech.com/wp-content/uploads/2025/02/Screenshot-2025-02-05-144955.png"
     },
-
     {
       title: "E-commerce Website (On-Working)",
       description: "Developing a secure WooCommerce platform with payment gateway integration.",
@@ -52,35 +54,40 @@ const Projects = () => {
     }
   ];
 
-
   return (
-    <>
-      <section id='projects' className='bg-gradient-to-b from-blue-950 via-cyan-500 to-[#060648] py-10 px-6 md:px-20'>
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-yellow-500 mb-8">Projects</h2>
+    <section id="projects" className="bg-gradient-to-b from-blue-950 via-cyan-500 to-[#060648] py-10 px-6 md:px-20">
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-4xl font-bold text-yellow-500 mb-8">Projects</h2>
 
-          {/* Correct Carousel Structure */}
-          <Carousel cols={3} rows={1} gap={10} loop>
-            {projects.map((project, index) => (
-              <Carousel.Item key={index}>
-                <div className="bg-white shadow-lg rounded-lg overflow-hidden border hover:shadow-xl transition">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-5">
-                    <h3 className="text-xl font-semibold text-gray-700">{project.title}</h3>
-                    <p className="text-gray-600 mt-2">{project.description}</p>
-                  </div>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={3} // Show 3 slides at a time
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          loop={true}
+          modules={[Navigation, Pagination, Autoplay]}
+          breakpoints={{
+            320: { slidesPerView: 1 }, // 1 slide on mobile
+            768: { slidesPerView: 2 }, // 2 slides on tablets
+            1024: { slidesPerView: 3 }, // 3 slides on desktops
+          }}
+          className="project-slider"
+        >
+          {projects.map((project, index) => (
+            <SwiperSlide key={index}>
+              <div className="bg-white shadow-lg rounded-lg overflow-hidden border hover:shadow-xl transition">
+                <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
+                <div className="p-5">
+                  <h3 className="text-xl font-semibold text-gray-700">{project.title}</h3>
+                  <p className="text-gray-600 mt-2">{project.description}</p>
                 </div>
-              </Carousel.Item>
-            ))}
-          </Carousel>
-
-        </div>
-      </section>
-    </>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
   );
 };
 

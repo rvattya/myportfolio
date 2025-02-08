@@ -1,23 +1,27 @@
-import React from 'react'
+import React from 'react';
 import { FaDownload } from "react-icons/fa";
 
 const Resume = () => {
   const handleDownload = () => {
-    // Replace the URL with the actual link to your resume file
-    const resumeUrl = "https://example.com/your-resume.pdf";
+    // ✅ Replace this URL with the actual file path
+    const resumeUrl = "https://drive.usercontent.google.com/u/0/uc?id=12HHvLo-142cTrxGqihmf3-O-Ld8NG7Tk&export=download"; // If inside the public folder
+
+    // ✅ Create an anchor tag dynamically to download the file
     const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = "Your_Resume.pdf";
+    link.download = "Your_Resume.pdf"; // Suggested filename for the user
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
   };
+
   return (
-    <>
     <section id='resume' className='py-10 px-6 md:px-20 bg-gradient-to-b from-blue-800 via-cyan-500 to-[#6665E7]'>
-    <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-yellow-500 mb-8">Resume</h2>
         <p className="text-lg text-white font-bold mb-6">
-        Explore my journey, skills, and accomplishments by downloading my resume.  
-        Get an insight into my expertise in web development, digital marketing, and project execution.
+          Explore my journey, skills, and accomplishments by downloading my resume.  
+          Get an insight into my expertise in web development, digital marketing, and project execution.
         </p>
         <div className="flex justify-center">
           <button
@@ -34,8 +38,7 @@ const Resume = () => {
         </div>
       </div>
     </section>
-    </>
-  )
-}
+  );
+};
 
-export default Resume
+export default Resume;
