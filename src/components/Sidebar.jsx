@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaGithub,FaUserGraduate,  FaGlobe  } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaGithub,FaUserGraduate,  FaGlobe,FaWhatsapp  } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import profile from "../assets/profile.jpg";
+
 
 const Sidebar = () => {
     const [fullprofile, setFullrofile]=useState(false);
@@ -72,6 +73,14 @@ setFullrofile(false)
             className="p-2 bg-yellow-400 text-black rounded-full hover:bg-yellow-500 transition"
           >
             <FaFacebookF size={20} />
+          </a>
+          <a
+            href="https://wa.me/919340610359"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 bg-yellow-400 text-black rounded-full hover:bg-yellow-500 transition"
+          >
+            <FaWhatsapp  size={20} />
           </a>
           <a
             href="https://www.instagram.com/r_vattya/"
