@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Resume from './components/Resume';
 import Testimonial from './components/Testimonial';
 import Experience from './components/Experience';
+import Whatsaapbtn from './components/WhatsaapBtn';
 
 
 
@@ -52,6 +53,7 @@ export default function App() {
             <Resume />
             <Testimonial />
             <Contact />
+            <Whatsaapbtn/>
           </div>
         </div>
       </div>

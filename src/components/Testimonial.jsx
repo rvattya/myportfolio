@@ -14,7 +14,7 @@ const Testimonial = () => {
         "Their expertise in real estate marketing and branding has significantly increased our project visibility. The strategic campaigns and digital presence they created helped us attract more investors and buyers effortlessly.",
     },
     {
-      name: "Dhirenra Choudhery",
+      name: "Dhirendra Choudhery",
       role: "Founder, Stechnotech",
       feedback:
         "From web development to digital marketing, their comprehensive solutions have been invaluable for our agency’s growth. Their technical expertise and creative approach set them apart in the industry.",
